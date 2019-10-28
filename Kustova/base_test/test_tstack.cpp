@@ -58,7 +58,7 @@ TEST(TStack, throw_when_get_top_from_empty_stack)
 	ASSERT_ANY_THROW(st.GetTopElement());
 }
 
-TEST(TVector, can_check_Isempty)
+TEST(TStack, can_check_Isempty)
 {
 	TStack<int> st(3);
 	EXPECT_EQ(true, st.IsEmpty());
@@ -67,7 +67,7 @@ TEST(TVector, can_check_Isempty)
 }
 
 
-TEST(TVector, can_check_Isfull)
+TEST(TStack, can_check_Isfull)
 {
 	TStack<int> st(2);
 	st.Push(1);
