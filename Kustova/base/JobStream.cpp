@@ -52,7 +52,7 @@ void TJobStream::StartStream(int &_taskID, int &cmpltd_tasks, int &_ignor_queue,
 				if (i < 6) cout << "	Новая задача не добавлена в очередь" << endl;
 			}
 		}
-		if ((!q.IsEmpty()) || (Core_buzy != 0)) // если очередь не пустая
+		if ((!q.IsEmpty())) // если очередь не пустая
 		{
 			if (task[q.GetFirst()].GetCores() <= _cores - Core_buzy)	//Если для задания найдутся свободные ядра
 			{
@@ -80,8 +80,24 @@ void TJobStream::StartStream(int &_taskID, int &cmpltd_tasks, int &_ignor_queue,
 		}
 		else if (Core_buzy == 0)
 		{
-			if (i < 6) cout << "	Процессор простаивает" << endl;
-			_idle_tacts++; // простой процессора 
+			int k = 0;
+			for (int j = 0; j < _tactsNum; j++)
+				if (task[j].Get_Is_in_progress() == 1)
+				{
+					k++;
+					task[j].ChangeTacts();
+					if (task[j].GetTacts() == 0)
+					{
+						Core_buzy -= task[j].GetCores();
+						task[j].Change_Is_in_progress();
+						cmpltd_tasks++;
+					}
+				}
+			if (k == 0)
+			{
+				if (i < 6) cout << "	Процессор простаивает" << endl;
+				_idle_tacts++; // простой процессора 
+			}
 		}
 		
 	}					

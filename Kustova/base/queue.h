@@ -101,6 +101,7 @@ void TQueue<T>::Sort(Tasks a[])
 			}
 		}
 	}
+
 }
 
 template<class T>
