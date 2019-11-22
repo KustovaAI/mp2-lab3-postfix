@@ -15,18 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sample_postfix.cpp">
+    <ClCompile Include="JobStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="postfix.cpp">
+    <ClCompile Include="QueueTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tasks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="postfix.h">
+    <ClInclude Include="queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="stack.h">
+    <ClInclude Include="JobStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tasks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
