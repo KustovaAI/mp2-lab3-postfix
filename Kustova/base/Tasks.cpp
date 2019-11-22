@@ -34,13 +34,11 @@ void Tasks::Change_Is_in_progress()
 void Tasks::ChangeTacts()
 {
 	Task_tacts--;
-	if (Task_tacts < 0) throw "task_already_completed";
 }
 
 void Tasks::ChangeCores()
 {
 	Task_cores--;
-	if (Task_cores < 0) throw "cores_for_task_already_found";
 }
 
 void Tasks::ChangePriority()

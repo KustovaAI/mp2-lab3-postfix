@@ -20,7 +20,7 @@ void TJobStream::StartStream(int &_taskID, int &cmpltd_tasks, int &_ignor_queue,
 	task = new Tasks[_tactsNum];
 	for (long i = 0; i < _tactsNum; i++)
 	{
-		if (i < 6) cout << "Цикл №: " << i << ": " << endl;
+		/*if (i < 6)*/ cout << "Цикл №: " << i << ": " << endl;
 		if (GetNewJob( _intens))		//попытка добавить в очередь
 		{
 			if (i < 6) cout << "	Поступила новая задача: " << endl;
